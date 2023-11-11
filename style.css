@@ -3,7 +3,7 @@
     font-family: 'Noto Sans', 'Noto Sans KR', sans-serif;
 }
 
-.app-header, .app-footer {
+.app-header {
     text-align: center;
     padding: 1em;
     background-color: #333;
@@ -67,7 +67,7 @@ body {
     padding: 20px;
     background-color: #333;
     color: #fff;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }

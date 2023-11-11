@@ -64,11 +64,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Touch Events
     questionCard.addEventListener('touchstart', e => {
+        e.preventDefault();
         startX = e.changedTouches[0].screenX;
         startY = e.changedTouches[0].screenY;
     });
 
     questionCard.addEventListener('touchend', e => {
+        e.preventDefault();
         endX = e.changedTouches[0].screenX;
         endY = e.changedTouches[0].screenY;
         handleGesture();
