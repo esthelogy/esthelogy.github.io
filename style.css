@@ -13,11 +13,11 @@
     background-repeat: no-repeat;
 }
 .swipe-right {
-    animation: swipeRight 0.6s forwards;
+    animation: tiltRightSwipe 0.6s forwards;
 }
 
 .swipe-left {
-    animation: swipeLeft 0.6s forwards;
+    animation: tiltLeftSwipe 0.6s forwards;
 }
 
 .swipe-up {
@@ -28,12 +28,18 @@
     animation: swipeDown 0.6s forwards;
 }
 
-@keyframes swipeRight {
-    to { transform: translateX(100%); }
+@keyframes tiltRightSwipe {
+    to {
+        transform: translateX(100%) rotate(40deg);
+        opacity: 0;
+    }
 }
 
-@keyframes swipeLeft {
-    to { transform: translateX(-100%); }
+@keyframes tiltLeftSwipe {
+    to {
+        transform: translateX(-100%) rotate(-40deg);
+        opacity: 0;
+    }
 }
 
 @keyframes swipeUp {
