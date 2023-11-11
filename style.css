@@ -1,0 +1,45 @@
+.question-card {
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: contain; /* or cover */
+    background-repeat: no-repeat;
+}
+.swipe-right {
+    animation: swipeRight 0.6s forwards;
+}
+
+.swipe-left {
+    animation: swipeLeft 0.6s forwards;
+}
+
+.swipe-up {
+    animation: swipeUp 0.6s forwards;
+}
+
+.swipe-down {
+    animation: swipeDown 0.6s forwards;
+}
+
+@keyframes swipeRight {
+    to { transform: translateX(100%); }
+}
+
+@keyframes swipeLeft {
+    to { transform: translateX(-100%); }
+}
+
+@keyframes swipeUp {
+    to { transform: translateY(-100%); }
+}
+
+@keyframes swipeDown {
+    to { transform: translateY(100%); }
+}
