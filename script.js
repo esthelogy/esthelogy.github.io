@@ -5,10 +5,19 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentCardIndex = 0;
     const totalCards = 9; // Assuming you have 9 cards
 
+    function preloadImage(cardIndex) {
+        const img = new Image();
+        img.src = `/img/samplecard${cardIndex}.png`;
+    }
+
     function loadNextCard() {
         currentCardIndex = (currentCardIndex + 1) % totalCards;
         questionCard.style.backgroundImage = `url('/img/samplecard${currentCardIndex + 1}.png')`;
         questionCard.textContent = ''; // Clear previous text
+
+        // Preload next two cards
+        preloadImage((currentCardIndex + 2) % totalCards + 1);
+        preloadImage((currentCardIndex + 3) % totalCards + 1);
     }
 
     loadNextCard();
@@ -27,8 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         } else {
             if (deltaY > 0) {
-                // Swipe Down Logic
+                questionCard.classList.add('swipe-down');
                 questionCard.textContent = 'I don\'t know'; // Display text for down swipe
+            } else {
+                questionCard.classList.add('swipe-up');
+                questionCard.textContent = 'Absolutely'; // Display text for up swipe
+                // Optional: Add text for up swipe if needed
             }
         }
 
@@ -70,5 +83,42 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isDragging) {
             // Optional: Add real-time dragging effect logic here
         }
+    });
+
+    // Event listeners for buttons
+    document.getElementById('button-x').addEventListener('click', function() {
+        questionCard.classList.add('swipe-left');
+        questionCard.textContent = 'No';
+        setTimeout(() => {
+            questionCard.className = 'question-card';
+            loadNextCard();
+        }, 600);
+    });
+
+    document.getElementById('button-o').addEventListener('click', function() {
+        questionCard.classList.add('swipe-right');
+        questionCard.textContent = 'Yes';
+        setTimeout(() => {
+            questionCard.className = 'question-card';
+            loadNextCard();
+        }, 600);
+    });
+
+    document.getElementById('button-star').addEventListener('click', function() {
+        questionCard.classList.add('swipe-up');
+        // Add text or other actions for up swipe if needed
+        setTimeout(() => {
+            questionCard.className = 'question-card';
+            loadNextCard();
+        }, 600);
+    });
+
+    document.getElementById('button-qmark').addEventListener('click', function() {
+        questionCard.classList.add('swipe-down');
+        questionCard.textContent = 'I don\'t know';
+        setTimeout(() => {
+            questionCard.className = 'question-card';
+            loadNextCard();
+        }, 600);
     });
 });
