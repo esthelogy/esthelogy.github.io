@@ -1,3 +1,77 @@
+.app-header {
+    text-align: center;
+    font-family: 'Noto Sans', 'Noto Sans KR', sans-serif;
+}
+
+.app-header, .app-footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    font-family: 'Art Nouveau', sans-serif; /* Example font */
+    color: #fff;
+}
+
+.slogan {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: -10px; /* Adjust as needed */
+    color: #979797; /* Adjust as needed */
+}
+
+.hamburger-menu .menu-icon {
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    /* Styling for the icon */
+}
+
+.menu-content {
+    display: none;
+    /* Add additional styling for the menu appearance */
+}
+
+.menu-content.show {
+    display: block; /* Or 'flex' or other depending on your design */
+}
+
+.main-content {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-section, .features-section, .team-section {
+    margin-bottom: 2em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: '✓ ';
+    color: #32CD32; /* LimeGreen */
+}
+
+h2 {
+    color: #333;
+}
+
+body {
+    font-family: 'Noto Sans', 'Noto Sans KR', sans-serif;
+}
+
+.app-footer {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 .question-card {
     width: 300px;
     height: 400px;
@@ -52,6 +126,60 @@
 
 .swipe-down {
     animation: swipeDown 0.6s forwards;
+}
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section form {
+    margin-top: 2em;
+    display: inline-block;
+    text-align: left;
+}
+
+.contact-section label {
+    display: block;
+    margin: 0.5em 0;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-section input[type="submit"] {
+    background-color: #32CD32;
+    color: white;
+    padding: 1em 1.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-section input[type="submit"]:hover {
+    background-color: #28a745;
+}
+
+nav a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    /* Adjust styles for mobile view */
 }
 
 @keyframes tiltRightSwipe {

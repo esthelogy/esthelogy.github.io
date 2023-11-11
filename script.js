@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const questionCard = document.getElementById('questionCard');
     let startX = 0, startY = 0, endX = 0, endY = 0;
@@ -25,7 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleGesture() {
         const deltaX = endX - startX;
         const deltaY = endY - startY;
-
+    
+        // Check if there was no movement, and if so, return early to do nothing.
+        if (deltaX === 0 && deltaY === 0) {
+            return;
+        }
+    
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             if (deltaX > 0) {
                 questionCard.classList.add('swipe-right');
@@ -38,18 +45,22 @@ document.addEventListener("DOMContentLoaded", function() {
             if (deltaY > 0) {
                 questionCard.classList.add('swipe-down');
                 questionCard.textContent = 'I don\'t know'; // Display text for down swipe
-            } else {
+            } else if (deltaY < 0) { // Changed else to else if to check for negative deltaY
                 questionCard.classList.add('swipe-up');
                 questionCard.textContent = 'Absolutely'; // Display text for up swipe
-                // Optional: Add text for up swipe if needed
             }
+            // If deltaY is 0, no else condition is needed because we want to do nothing.
         }
-
-        setTimeout(() => {
-            questionCard.className = 'question-card';
-            loadNextCard();
-        }, 600);
+    
+        // If there was movement, set a timeout to reset the card state and load the next card.
+        if (deltaX !== 0 || deltaY !== 0) {
+            setTimeout(() => {
+                questionCard.className = 'question-card';
+                loadNextCard();
+            }, 600);
+        }
     }
+    
 
     // Touch Events
     questionCard.addEventListener('touchstart', e => {
@@ -84,6 +95,19 @@ document.addEventListener("DOMContentLoaded", function() {
             // Optional: Add real-time dragging effect logic here
         }
     });
+
+    // document.querySelector('.menu-icon').addEventListener('click', function() {
+    //     document.querySelector('.menu-content').classList.toggle('show');
+    // });
+
+    // Hamburger Menu Toggle
+    const menuIcon = document.querySelector('.menu-icon');
+    const menuContent = document.querySelector('.menu-content');
+    
+    menuIcon.addEventListener('click', function() {
+        menuContent.classList.toggle('show');
+    });
+
 
     // Event listeners for buttons
     document.getElementById('button-x').addEventListener('click', function() {

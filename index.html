@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personality Test App</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">   
 </head>
 <body>
+    <div class="app-header">
+        <h1>AIVI</h1>
+        <p class="slogan">Find out who you are, what you are capable of.</p>
+        <!-- Hamburger Menu Icon -->        
+    </div>    
+    <div class="hamburger-menu">
+        <div class="menu-icon">≡</div>
+        <div class="menu-content">
+            <a href="#login">Login/Sign Up</a>
+            <a href="about.html">About the App</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
     <div id="questionCard" class="question-card">
         <!-- Image will be loaded here -->
     </div>
     <div class="button-container">
-        <img src="/img/button-x.png" id="button-x" alt="Left Swipe">
-        <img src="/img/button-o.png" id="button-o" alt="Right Swipe">
-        <img src="/img/button-star.png" id="button-star" alt="Up Swipe">
-        <img src="/img/button-qmark.png" id="button-qmark" alt="Down Swipe">
+        <img src="/img/button-x.png" id="button-x" alt="Left Swipe"> 
+        <img src="/img/button-qmark.png" id="button-qmark" alt="Down Swipe">        
+        <img src="/img/button-star.png" id="button-star" alt="Up Swipe">        
+        <img src="/img/button-o.png" id="button-o" alt="Right Swipe">        
     </div>
+    <footer class="app-footer">
+        <p>&copy; 2023 AIVI. All rights reserved.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
