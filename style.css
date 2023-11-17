@@ -178,8 +178,34 @@ nav a:hover {
 }
 
 /* Responsiveness */
-@media (max-width: 768px) {
-    /* Adjust styles for mobile view */
+/* Adjustments for Samsung Galaxy Z Fold 4 (Unfolded Mode) */
+@media (min-width: 768px) {
+    .button-container {
+        margin-bottom: 100px; /* Adjust this value as needed */
+    }
+
+    .app-footer {
+        position: relative; /* Change to relative if it's fixed */
+    }
+}
+
+/* Adjustments for smaller screens like iPhone 13 Mini */
+@media (max-width: 480px) {
+    .question-card {
+        width: 90%; /* Adjust the width to fit the screen */
+        height: auto; /* Adjust the height accordingly */
+        font-size: 2em; /* Adjust font size inside the card */
+        line-height: normal; /* Reset line height for text */
+    }
+
+    .app-footer {
+        font-size: 0.7em; /* Reduce font size */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .button-container {
+        margin-bottom: 50px; /* Provide enough space for the buttons */
+    }
 }
 
 @keyframes tiltRightSwipe {
