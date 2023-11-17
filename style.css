@@ -194,8 +194,7 @@ nav a:hover {
     .question-card {
         width: 90%; /* Adjust the width to fit the screen */
         height: auto; /* Adjust the height accordingly */
-        font-size: 2em; /* Adjust font size inside the card */
-        line-height: normal; /* Reset line height for text */
+        margin: 10px auto; /* Ensure there's space around the card */
     }
 
     .app-footer {
