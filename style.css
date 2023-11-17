@@ -192,8 +192,9 @@ nav a:hover {
 /* Adjustments for smaller screens like iPhone 13 Mini */
 @media (max-width: 480px) {
     .question-card {
-        width: 90%; /* Adjust the width to fit the screen */
-        height: auto; /* Adjust the height accordingly */
+        width: 80vw; /* Relative to viewport width */
+        height: 50vh; /* Relative to viewport height */
+        background-size: cover; /* Adjust as necessary */
         margin: 10px auto; /* Ensure there's space around the card */
     }
 
